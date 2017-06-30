@@ -22,34 +22,31 @@ module.exports = {
     contentBase: './build',
     host: 'localhost',
     port: 7000,
-    // proxy: {
-    //   '/api': {
-    //     target: 'https://api.douban.com',
-    //     changeOrigin: true,
-    //     pathRewrite: {'^/api': ''}
-    //   },
+    proxy: {
+      '/api': {
+        target: 'https://www.shangpin.com',
+        changeOrigin: true,
+        pathRewrite: {'^/api': ''}
+      }
     //   '/json': {
     //     target: 'http://localhost:7001',
     //     pathRewrite: {'^/json': ''}
     //   }
-    // }
+    }
   },
 
   //模块
   module: {
     loaders: [
-      // babel-loader, 解析es6, jsx
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-
+     
       // babel-loader, 解析.JSX文件
       {
-        test: /\.jsx$/,
+        test: /\.(jsx|js)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+                presets: ['react', 'es2015']
+            }
       },
 
       // CSS打包
@@ -122,9 +119,9 @@ module.exports = {
   ],
 
   // 组件抽离
-  externals: {
-    'react': 'window.React',
-    'react-dom': 'window.ReactDOM',
-    'react-router': 'window.ReactRouter'
-  }
+  // externals: {
+  //   'react': 'window.React',
+  //   'react-dom': 'window.ReactDOM',
+  //   'react-router': 'window.ReactRouter'
+  // }
 }

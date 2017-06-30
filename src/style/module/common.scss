@@ -1,0 +1,64 @@
+@charset "utf-8";
+#root{
+	/*height: 100%;*/
+	width:900px;
+	margin:10px auto;
+}
+body{
+	background:url(http://img.t.sinajs.cn/t6/skin/skinvip072/images/body_bg_page.jpg?id=1410943047113) no-repeat -167px -75px;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+.all{
+	
+	height: 100%;
+	width: 100%;
+	@include flexbox();
+	@include flex-direction(column);
+	
+	.header{
+		height: 300px;
+		background:url(http://bpic.588ku.com/back_pic/03/68/74/1657b3cea5bb265.jpg) no-repeat;
+		.tx{
+			height:100px;
+			width:100px;
+			margin:0 auto;
+			img{
+				width:100%;
+				height: 100%;
+				margin-top: 60px;
+				border-radius: 50%;
+				border:2px solid rgba(255,255,255,.5);
+			}
+		}
+		h1{
+			font-size: 22px;
+			font-weight: normal;
+			color:#fff;
+			margin-top: 75px;
+			text-align: center;
+		}
+		p{
+			color:#fff;
+			text-align: center;
+			margin-top: 5px;
+		}
+	}
+	.left{
+		width: 200px;
+		background: #fff;
+		float: left;
+		ul{
+			padding:20px;
+			li{
+				margin: 20px 0;
+				font-size: 16px;			}
+		}
+
+	}
+	.right{
+		float: left;
+		width: 700px;
+		overflow: hidden;	
+	}
+}
